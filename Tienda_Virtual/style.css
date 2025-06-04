@@ -1,0 +1,526 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: #F5EDE1;
+}
+
+.parallax {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:  #F5EDE1;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-attachment: fixed;  
+    background-size: cover;
+    background-position: center;
+}
+
+.parallax1 { background-image: url('https://cdn.pixabay.com/photo/2017/08/30/18/27/coffee-2698126_960_720.jpg');
+}
+
+.parallax2 {
+    background-image: url('https://th.bing.com/th/id/OIP.Tqgfn5GHzsYz4Av3omgyrgHaHa?rs=1&pid=ImgDetMain');
+}
+
+.parallax3 {
+    background-image: url('https://th.bing.com/th/id/OIP.S6Dh11f7SPLG4WcvyUEmvAAAAA?rs=1&pid=ImgDetMain');
+}
+
+.content {
+    padding: 50px;
+    font-size: 18px;
+}
+
+.content1 {
+    font-size: 18px;
+    padding: auto;
+    padding-top: 5px;
+}
+
+.color1{
+    background-color: #3D2C22;
+}
+.color2{
+    background-color: lightskyblue;
+}
+.color3{
+    background-color: lightgreen;
+}
+
+.nombre-tienda {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 20px 0;
+    font-family: Playfair Display, serif;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 4px #8A3324;
+}
+
+.descripcion {
+    color: #FFFFFF;
+    font-size: 20px;
+    margin: 10px 0;
+    font-family: Lato, sans-serif;
+    text-shadow: 2px 2px 4px #8A3324;
+}
+
+.descripcion2 {
+    color: #F5EDE1;
+    font-size: 20px;
+    margin: 10px 0;
+    font-family: Lato, sans-serif;
+}
+
+.subtitulo {
+    font-size: 24px;
+    margin: 20px 0;
+    color: #FFFFFF;
+    font-family: Playfair Display, serif;
+    text-transform: bold;
+}
+
+.nav-bar {
+    background: #3D2C22;
+    padding: 15px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    font-family: Lato, sans-serif;
+}
+
+.nav-bar ul {
+    list-style: none;
+}
+
+.nav-bar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.nav-bar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+.nav-bar ul li a:hover {
+    background: #D4AF37;
+    border-radius: 5px;
+}
+
+/* --- Contenedor Principal (general) --- */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px; /* Padding interno del contenedor */
+}
+
+/* --- Clases de Colores existentes (aseguramos que content1 y color1 se apliquen) --- */
+.color1 {
+    background-color: #F5EDE1; /* Beige Crema */
+    color: #3D2C22; /* Marrón Espresso para el texto por defecto */
+}
+/* Agrega las otras clases de color si las tienes: .color2, .color3 */
+
+
+/* --- Estilos para la Sección "Nuestra Historia" (nueva) --- */
+
+/* Aseguramos que la sección base tenga padding adecuado */
+.content1 { /* Esta es la sección que contiene tu historia */
+    padding: 50px 0; /* Ajusta el padding vertical. Horizontal lo maneja el .container */
+    /* Asegúrate de que no tenga text-align: center; aquí si ya lo quitaste */
+}
+
+.history-layout {
+    display: flex; /* Habilita Flexbox para las columnas */
+    flex-direction: row; /* Texto a la izquierda, imagen a la derecha */
+    justify-content: space-between; /* Distribuye el espacio entre las columnas */
+    align-items: flex-start; /* Alinea los ítems desde arriba */
+    gap: 40px; /* Espacio entre el texto y la imagen */
+    /* Ya no necesitamos background-color y color aquí porque .color1 lo maneja */
+}
+
+.history-content {
+    flex: 2; /* El contenido del texto ocupará 2/3 del espacio */
+    text-align: left; /* Alinea el texto a la izquierda */
+    /* Removido padding-right: 20px; porque 'gap' lo maneja mejor */
+}
+
+/* Estilos específicos para el título y párrafos dentro de history-content */
+.history-content .subtitulo { /* Usamos .subtitulo ya que así lo tienes en el HTML */
+    font-size: 36px;
+    margin-bottom: 25px;
+    text-align: left; /* Asegura que el título también esté a la izquierda */
+    color: #3D2C22; /* Asegura el color del título */
+}
+
+.history-content .descripcion2 { /* Usamos .descripcion2 ya que así lo tienes en el HTML */
+    font-size: 17px;
+    margin-bottom: 15px;
+    line-height: 1.7; /* Mejora la legibilidad del texto largo */
+    color: #3D2C22; /* Asegura el color del párrafo */
+}
+
+
+.history-image-placeholder { /* Usamos la clase del HTML */
+    flex: 1; /* La imagen ocupará 1/3 del espacio */
+    display: flex; /* Para centrar la imagen dentro de su contenedor si es necesario */
+    justify-content: center;
+    align-items: flex-start; /* Asegura que la imagen se alinee con la parte superior del texto */
+    padding-top: 10px; /* Pequeño ajuste si el título es muy grande */
+}
+
+.history-image-placeholder img { /* Estilos para la imagen dentro del placeholder */
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Estilos para la Sección "Cafés del Mundo" --- */
+.coffee-world-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center; /* Alinea el título y el texto introductorio al centro */
+    margin-top: 50px; /* Espacio entre la sección anterior y esta */
+}
+
+.coffee-world-section .subtitulo { /* Sobreescribe la alineación del subtítulo para esta sección */
+    text-align: center;
+}
+
+.coffee-world-section .intro-text,
+.coffee-world-section .call-to-action {
+    max-width: 800px; /* Limita el ancho del texto introductorio para mejor legibilidad */
+    margin: 0 auto 40px auto; /* Centra el texto y añade margen inferior */
+}
+
+.coffee-regions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
+    gap: 30px; /* Espacio entre las tarjetas */
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.coffee-card {
+    background-color: #FFFFFF; /* Fondo blanco para las tarjetas */
+    border: 1px solid #E0D8D0; /* Borde suave */
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.coffee-card:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.coffee-card img {
+    max-width: 100%;
+    height: 180px; /* Altura fija para las imágenes de tarjeta */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+    border-radius: 4px; /* Bordes redondeados para la imagen dentro de la tarjeta */
+    margin-bottom: 20px;
+}
+
+.coffee-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #3D2C22;
+    margin-bottom: 10px;
+}
+
+.coffee-card p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.coffee-card .btn-explore {
+    display: inline-block;
+    background-color: #A0522D; /* Terracota para el botón */
+    color: #FFFFFF;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.coffee-card .btn-explore:hover {
+    background-color: #8B4513; /* Terracota más oscuro al pasar el mouse */
+}
+
+/* --- Estilos para la Sección "Equipa tu Rincón Barista" --- */
+.barista-section {
+    padding-top: 60px; /* Un poco más de padding para esta sección */
+    padding-bottom: 60px;
+    text-align: center;
+    margin-top: 50px; /* Espacio entre la sección anterior y esta */
+    /* background-color y color ya vienen de .color2 */
+}
+
+.barista-section .subtitulo {
+    color: #F5EDE1; /* El color del título debe ser claro sobre el fondo oscuro */
+    text-align: center;
+}
+
+.barista-section .intro-text-light,
+.barista-section .call-to-action-light {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    color: #F5EDE1; /* El color del texto debe ser claro sobre el fondo oscuro */
+}
+
+.barista-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Igual que el de Cafés del Mundo */
+    gap: 30px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.barista-item-card {
+    background-color: #FFFFFF; /* Fondo blanco para las tarjetas de ítems */
+    border: 1px solid #C0C0C0; /* Borde más claro */
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra un poco más pronunciada */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.barista-item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.barista-item-card img {
+    max-width: 100%;
+    height: 200px; /* Un poco más alto para accesorios */
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.barista-item-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #3D2C22; /* Color de título oscuro */
+    margin-bottom: 10px;
+}
+
+.barista-item-card p {
+    font-size: 16px;
+    color: #555; /* Color de párrafo oscuro */
+    margin-bottom: 15px;
+}
+
+/* Nuevo estilo para el botón sobre fondo oscuro */
+.btn-explore-light {
+    display: inline-block;
+    background-color: #F5EDE1; /* Beige Crema para el botón (contrasta bien) */
+    color: #3D2C22; /* Marrón Espresso para el texto del botón */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-explore-light:hover {
+    background-color: #D4AF37; /* Dorado Suave al pasar el mouse */
+    color: #FFFFFF; /* Texto blanco en hover para el botón claro */
+}
+
+/* --- Estilos para la Sección de Formulario de Contacto --- */
+.contact-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: center; /* Centra el título y el intro text */
+    margin-top: 50px; /* Espacio entre la sección anterior y esta */
+    /* background-color y color ya vienen de .color1 */
+}
+
+.contact-section .subtitulo {
+    text-align: center;
+    /* Color ya viene de la configuración general de subtítulos */
+}
+
+.contact-section .intro-text {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    /* Color ya viene de la configuración general de descripcion2 */
+}
+
+.contact-form-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    gap: 40px; /* Espacio entre el formulario y la información */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: flex-start; /* Alinea los elementos desde arriba */
+    max-width: 1000px; /* Ancho máximo para el contenedor del formulario */
+    margin: 0 auto; /* Centra el contenedor en la página */
+}
+
+.contact-form {
+    flex: 2; /* El formulario ocupa 2/3 del espacio */
+    min-width: 300px; /* Ancho mínimo para que no se comprima demasiado */
+    background-color: #FFFFFF; /* Fondo blanco para el formulario */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Alinea el texto del formulario a la izquierda */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block; /* Cada etiqueta en su propia línea */
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #3D2C22; /* Marrón Espresso para las etiquetas */
+    font-size: 16px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #DCCFBF; /* Borde suave */
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif; /* Consistencia de fuente */
+    color: #333;
+    background-color: #FDFDFD;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: #A0522D; /* Terracota al enfocar */
+    box-shadow: 0 0 0 3px rgba(160, 82, 45, 0.2); /* Sombra de enfoque sutil */
+    outline: none; /* Elimina el contorno por defecto del navegador */
+}
+
+.form-group textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 100px;
+}
+
+.btn-submit {
+    background-color: #A0522D; /* Terracota para el botón de envío */
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto; /* Ancho automático, no 100% */
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #8B4513; /* Terracota más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
+}
+
+/* Estilos para la barra lateral de información de contacto */
+.contact-info-sidebar {
+    flex: 1; /* La barra lateral ocupa 1/3 del espacio */
+    min-width: 250px; /* Ancho mínimo */
+    background-color: #3D2C22; /* Marrón Espresso para el fondo */
+    color: #F5EDE1; /* Texto Beige Crema */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.contact-info-sidebar h3,
+.contact-info-sidebar h4 {
+    font-family: 'Playfair Display', serif;
+    color: #D4AF37; /* Dorado Suave para los títulos */
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.contact-info-sidebar h4 {
+    font-size: 20px;
+    margin-top: 25px;
+}
+
+.contact-info-sidebar p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    color: #F5EDE1; /* Asegura el color del texto de párrafo */
+}
+
+.contact-info-sidebar p i {
+    margin-right: 10px;
+    color: #D4AF37; /* Dorado Suave para los iconos */
+}
+
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #F5EDE1; /* Iconos claros */
+    font-size: 24px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover {
+    color: #D4AF37; /* Dorado Suave al pasar el mouse */
+    transform: scale(1.1);
+}
+
+/* --- Media Queries para Responsividad (Opcional, pero recomendado) --- */
+@media (max-width: 768px) {
+    .contact-form-container {
+        flex-direction: column; /* Apila el formulario y la info en pantallas pequeñas */
+        align-items: center; /* Centra los elementos apilados */
+    }
+
+    .contact-form,
+    .contact-info-sidebar {
+        width: 100%; /* Ocupan todo el ancho disponible */
+        max-width: 450px; /* Limita el ancho en pantallas pequeñas si es necesario */
+    }
+}
+
+/* --- Estilos para el Pie de Página (footer) --- */
+footer {
+    background-color: #3D2C22;
+    color: #F5EDE1;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    font-size: 14px;
+}
